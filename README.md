@@ -92,7 +92,7 @@ consider committing a placeholder/sample image instead of leaving
   counts, but the obvious next step)
 - Row-level D1 query typing (`.all<RowShape>()`) throughout, for tighter
   type safety on what the database actually returns
-- A custom domain instead of the default `*.pages.dev`
+- ✓ A custom domain instead of the default `*.pages.dev`
 
 ---
 
