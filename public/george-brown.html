@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bo Louie — Graphic Design Certificate</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+  <h1>Graphic Design Certificate</h1>
+  <p class="subtitle">George Brown College — Bo Louie — 2015–2017</p>
+
+  <div class="cert-container">
+    <canvas id="cert-canvas"></canvas>
+  </div>
+
+  <p class="back-link"><a href="/">← Back to all certificates</a></p>
+
+  <script src="/viewer.js"></script>
+  <script>
+    renderCertificate({
+      imagePath: "/certs/george-brown-design.jpg",
+      watermarkText: "Bo Louie",
+      canvasId: "cert-canvas",
+      maxWidth: 800,
+    });
+  </script>
+</body>
+
+</html>

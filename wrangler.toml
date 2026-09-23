@@ -1,0 +1,8 @@
+name = "cert-viewer"
+compatibility_date = "2024-09-01"
+pages_build_output_dir = "public"
+
+[[d1_databases]]
+binding = "DB"                      # accessed in Functions as env.DB
+database_name = "cert-viewer-db"
+database_id = "a6b36b70-1045-4298-b320-ce18e4664e52"

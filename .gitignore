@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Certificate images — kept out of version control deliberately.
+# The whole point of this project is controlling how these are displayed;
+# committing the raw files here would defeat that. See README for the pattern.
+public/certs/*.jpg
+public/certs/*.jpeg
+public/certs/*.png
+public/certs/*.webp
+
+# Wrangler / Cloudflare local state
+.wrangler/
+.dev.vars
+
+# OS cruft
+.DS_Store

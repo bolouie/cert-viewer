@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cert Viewer — Stats</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { text-align: left; padding: 0.5rem; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+    .stats-container { background: #fff; padding: 1.5rem; border-radius: 8px; max-width: 700px; width: 100%; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  </style>
+</head>
+<body>
+  <h1>Visit Stats</h1>
+  <p class="subtitle">Pulled live from /api/stats</p>
+
+  <div class="stats-container" id="stats">Loading…</div>
+
+  <p class="back-link"><a href="/">← Back to all certificates</a></p>
+
+  <script>
+    fetch("/api/stats")
+      .then((res) => res.json())
+      .then((data) => {
+        const el = document.getElementById("stats");
+        if (data.error) {
+          el.innerHTML = `<p class="error">${data.error}</p>`;
+          return;
+        }
+
+        const totalsRows = data.totals
+          .map((r) => `<tr><td>${r.cert_slug}</td><td>${r.total}</td></tr>`)
+          .join("");
+
+        const recentRows = data.recent
+          .map(
+            (r) =>
+              `<tr><td>${r.cert_slug}</td><td>${r.country || "—"}</td><td>${r.created_at}</td></tr>`
+          )
+          .join("");
+
+        el.innerHTML = `
+          <h3>Total views</h3>
+          <table><tr><th>Certificate</th><th>Views</th></tr>${totalsRows}</table>
+          <h3>Recent visits</h3>
+          <table><tr><th>Certificate</th><th>Country</th><th>When</th></tr>${recentRows}</table>
+        `;
+      })
+      .catch(() => {
+        document.getElementById("stats").innerHTML =
+          '<p class="error">Could not load stats.</p>';
+      });
+  </script>
+</body>
+</html>

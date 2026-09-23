@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bo Louie — BrainStation Web Development Certificate</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+  <h1>Web Development Certificate</h1>
+  <p class="subtitle">BrainStation — Bo Louie</p>
+
+  <div class="cert-container">
+    <canvas id="cert-canvas"></canvas>
+  </div>
+
+  <!--
+    TODO: If BrainStation issues via Credly/Acclaim or has its own verification
+    portal, link to it here — that's stronger proof than this page alone.
+    <p class="verify-link">
+      <a href="REPLACE_WITH_VERIFICATION_URL" target="_blank" rel="noopener">
+        Verify this credential →
+      </a>
+    </p>
+  -->
+
+  <p class="back-link"><a href="/">← Back to all certificates</a></p>
+
+  <script src="/viewer.js"></script>
+  <script>
+    renderCertificate({
+      imagePath: "/certs/brainstation-webdev.png",
+      watermarkText: "Bo Louie",
+      canvasId: "cert-canvas",
+      maxWidth: 800,
+    });
+  </script>
+</body>
+
+</html>
