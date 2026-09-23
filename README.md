@@ -4,7 +4,7 @@ A small Cloudflare Pages project for displaying professional certificates
 publicly (e.g. linked from LinkedIn) without making them trivially easy to
 screenshot, save, and reuse as someone else's credential.
 
-**Live demo:** [add your deployed URL here]
+**Live demo:** [credentials.bolouie.com](https://credentials.bolouie.com)
 
 ## Why this exists
 
